@@ -1,6 +1,6 @@
 require 'win32ole'
 
-module Spot
+module WinPlay
   class Player
 
     @@itunes = WIN32OLE.new('iTunes.Application')
