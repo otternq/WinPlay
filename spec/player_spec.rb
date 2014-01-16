@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Spot
+module WinPlay
   describe Player do
     it { Player.should respond_to(:state) }
     it { Player.should respond_to(:playing) }

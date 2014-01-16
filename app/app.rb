@@ -4,7 +4,7 @@ require 'sinatra'
 require_relative 'models/playerwin'
 require 'logger'
 
-module Spot
+module WinPlay
 
   class App < Sinatra::Base
     

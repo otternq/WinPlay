@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Spot
+module WinPlay
   describe App do
     describe "GET /" do
       it "should greet us" do

@@ -4,4 +4,4 @@ Bundler.require
 
 require './app/app.rb'
 
-run Spot::App
+run WinPlay::App
