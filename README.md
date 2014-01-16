@@ -1,26 +1,26 @@
-#Spot
+#WinPlay
 
-Simple Spotify-powered tunes for your office.
-
-![](https://github.com/minton/Spot/raw/master/resources/Diagram.gif)
+Windows tunes for your office.
 
 ##Origins
 
-This project is heavily inspired by [Play](https://github.com/play/play). Which is an awesome iTunes-based solution.
+This project is an adaptation of [minton's spot](https://github.com/minton/spot) which is heavily inspired by [Play](https://github.com/play/play).
 
 ##Requirements
 
-*   OS X
-*   Spotify > 0.8
+*   Windows
+*   Ruby
+*   iTunes > ? - Only tested with v11.1.3
 *   Campfire with Hubot (optional but recommended)
 
 ##Setup
 
-Install [Spotify](https://www.spotify.com).
+Install [iTunes](http://www.apple.com/itunes/).
 
 Clone the repo:
 
-    git clone https://github.com/minton/Spot.git && cd Spot
+    git clone https://github.com/otternq/WinPlay.git
+    cd WinPlay
 
 Install gems:
 
@@ -32,19 +32,13 @@ Start Spot:
 
 The server will start up here: [localhost:5051](http://localhost:5051).
 
-Spotify will open and `Repeat` and `Shuffle` will be turned on.
-
-You should now open your favorite playlist or radio station.
-
-##Airplay Support
-
-You'll need to `Enable access for assistive devices` in System Preferences for this to work.
-
-![Accessibility](http://i.imgur.com/N8rwAee.png)
+You should now open your favorite playlist.
 
 ##Usage
 
-Spot can technically be used by any client capable of GET/PUT/POST requests as described below but it was really designed to be controlled via [Hubot](http://hubot.github.com/) in [Campfire](http://campfirenow.com/). You can find the latest Spot Hubot script here: [Spot.coffee](https://raw.github.com/github/hubot-scripts/master/src/scripts/spot.coffee).
+WinTunes can technically be used by any client capable of GET/PUT/POST requests as described below but it was really designed to be controlled via [Hubot](http://hubot.github.com/) in [Campfire](http://campfirenow.com/). 
+
+The API for WinPlay is currently the same as [minton's spot](https://github.com/minton/spot), which has its own Hubot script. You can find the latest Spot Hubot script here: [Spot.coffee](https://raw.github.com/github/hubot-scripts/master/src/scripts/spot.coffee).
 
 ###Campfire
 
@@ -66,12 +60,6 @@ Spot can technically be used by any client capable of GET/PUT/POST requests as d
     hubot spot - Restart Spot
     hubot respot - Restart Spotify
 
-###Clients
-
-[Window Spot](https://github.com/minton/windowspot) for Windows
-
-![Ugly ScreenShot](https://raw.github.com/minton/windowspot/master/UglyScreenShot.PNG)
-
 
 ###API
 
@@ -82,13 +70,6 @@ What song is playing:
     HTTP/1.1 200 OK
     Content-Length: 50
     Now playing “Raise Your Weapon” by Deadmau5...
-
-Album art for current song:
-
-    ~$ wget http://localhost:5051/playing.png
-    
-    100%[======================================>] 87,510      --.-K/s   in 0s      
-    2012-12-21 21:20:38 (518 MB/s) - ‘playing.png’ saved [87510/87510]
     
 Play a specific song:
 
@@ -152,11 +133,7 @@ Play the previous track:
     
     HTTP/1.1 200 OK
     Content-Length: 71
-    Let's hear it again! Now playing “Raise Your Weapon” by Deadmau5...
-    
-#Author
-
-Spot was lovingly crafted by [@mcminton](https://twitter.com/mcminton). You should [follow me](https://twitter.com/intent/follow?screen_name=mcminton) or [![endorse](https://api.coderwall.com/minton/endorsecount.png)](https://coderwall.com/minton) me for good karma! 
+    Let's hear it again! Now playing “Raise Your Weapon” by Deadmau5... 
 
 #Art
 

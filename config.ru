@@ -1,3 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/app/boot')
+require 'bundler'
 
-map('/')         { run Spot::App }
+Bundler.require
+
+require './app/app.rb'
+
+run Spot::App

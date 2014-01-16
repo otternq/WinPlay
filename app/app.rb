@@ -1,17 +1,20 @@
-require 'models/player'
-require 'models/spotify'
+require 'sinatra'
+
+
+require_relative 'models/playerwin'
 require 'logger'
 
 module Spot
+
   class App < Sinatra::Base
     
-    configure do
-      enable :logging
-      `./script/boot`
-    end
+    #configure do
+    #  enable :logging
+    #  `./script/boot`
+    #end
 
     get '/' do
-      'Welcome to Spot!<br/>http://github.com/minton/Spot'
+      'Welcome to WinPlay!<br/>http://github.com/otternq/WinPlay'
     end
 
     put '/say' do
@@ -64,17 +67,22 @@ module Spot
 
     post '/find' do
       query = params[:q]  
-      track_uri = Spotify.find(query)
-      if track_uri.nil? 
+      #track_uri = Player.find(query)
+      data = Player.find(query)
+      if tracks.nil? 
         "What the hell is you talkin' 'bout?"
       else
-        Player.play_song(track_uri)
+        tracks.each do |t|
+           Player.play(t)
+           return
+        end
+        
       end 
     end
 
     post '/just-find' do
       query = params[:q]
-      track_data = Spotify.findData(query)
+      track_data = Player.find(query)
       if track_data.nil?
         return "What the hell is you talkin' 'bout?"
       end

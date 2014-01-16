@@ -6,7 +6,7 @@ module Spot
       it "should greet us" do
         get "/"
         last_response.should be_ok
-        last_response.body.should == "Welcome to Spot!<br/>http://github.com/minton/Spot"
+        last_response.body.should == "Welcome to WinPlay!<br/>http://github.com/otternq/WinPlay"
       end 
     end
   end
